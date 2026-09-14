@@ -1,1 +1,63 @@
-<p>dashboard works!</p>
+<div class="min-h-screen bg-slate-100">
+  <header class="flex items-center justify-between bg-white px-6 py-4 shadow-sm">
+    <h1 class="text-2xl font-bold text-indigo-600">Dashboard</h1>
+
+    <button
+      type="button"
+      (click)="logout()"
+      class="rounded-lg bg-red-500 px-4 py-2 text-sm font-semibold text-white hover:bg-red-600"
+    >
+      Logout
+    </button>
+  </header>
+
+  <main class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+    <div class="mb-8">
+      <h2 class="text-3xl font-bold text-slate-800">Welcome back 👋</h2>
+      <p class="mt-2 text-slate-500">Here is your account overview.</p>
+    </div>
+
+    <section class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="rounded-2xl bg-white p-6 shadow-sm">
+        <p class="text-sm text-slate-500">Total Users</p>
+        <p class="mt-2 text-3xl font-bold text-slate-800">1,248</p>
+        <p class="mt-2 text-sm text-green-600">+12.5% this month</p>
+      </div>
+
+      <div class="rounded-2xl bg-white p-6 shadow-sm">
+        <p class="text-sm text-slate-500">Revenue</p>
+        <p class="mt-2 text-3xl font-bold text-slate-800">$24,560</p>
+        <p class="mt-2 text-sm text-green-600">+8.2% this month</p>
+      </div>
+
+      <div class="rounded-2xl bg-white p-6 shadow-sm">
+        <p class="text-sm text-slate-500">Orders</p>
+        <p class="mt-2 text-3xl font-bold text-slate-800">856</p>
+        <p class="mt-2 text-sm text-blue-600">24 new today</p>
+      </div>
+
+      <div class="rounded-2xl bg-white p-6 shadow-sm">
+        <p class="text-sm text-slate-500">Pending Tasks</p>
+        <p class="mt-2 text-3xl font-bold text-slate-800">18</p>
+        <p class="mt-2 text-sm text-orange-600">Needs attention</p>
+      </div>
+    </section>
+
+    <section class="mt-8 rounded-2xl bg-white p-6 shadow-sm">
+      <h3 class="text-xl font-bold text-slate-800">Recent Activity</h3>
+
+      <div class="mt-5 divide-y divide-slate-100">
+        <div
+          *ngFor="let activity of activities"
+          class="flex flex-col gap-2 py-4 sm:flex-row sm:items-center sm:justify-between"
+        >
+          <div>
+            <p class="font-medium text-slate-700">{{ activity.title }}</p>
+            <p class="text-sm text-slate-500">{{ activity.description }}</p>
+          </div>
+          <span class="text-sm text-slate-400">{{ activity.time }}</span>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
