@@ -1,0 +1,72 @@
+<main class="flex min-h-screen items-center justify-center bg-slate-100 px-4 py-8">
+  <section class="grid w-full max-w-5xl overflow-hidden rounded-3xl bg-white shadow-2xl md:grid-cols-2">
+    <div class="hidden bg-indigo-600 p-12 text-white md:flex md:flex-col md:justify-center">
+      <h1 class="text-4xl font-bold">Welcome back</h1>
+      <p class="mt-4 text-lg text-indigo-100">
+        Sign in to continue to your dashboard.
+      </p>
+    </div>
+
+    <form class="p-6 sm:p-10" action="#" method="post" (ngSubmit)="login()">
+      <div class="mb-8">
+        
+        <p class="text-sm font-semibold uppercase tracking-wider text-indigo-600">
+          Account login
+        </p>
+        <h2 class="mt-2 text-3xl font-bold text-slate-900">Sign in</h2>
+        <p class="mt-2 text-slate-500">Enter your details below.</p>
+      </div>
+
+      <label class="mb-2 block text-sm font-medium text-slate-700" for="email">
+        Email address
+      </label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        required
+        placeholder="you@example.com"
+        [(ngModel)]="email"
+        class="mb-5 w-full rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100"
+      />
+
+      <label class="mb-2 block text-sm font-medium text-slate-700" for="password">
+        Password
+      </label>
+      <input
+        id="password"
+        name="password"
+        type="password"
+        required
+        placeholder="••••••••"
+        [(ngModel)]="password"
+        class="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100"
+      />
+
+      <div class="mt-4 flex items-center justify-between text-sm">
+        <label class="flex items-center gap-2 text-slate-600">
+          <input type="checkbox" class="rounded border-slate-300 text-indigo-600" />
+          Remember me
+        </label>
+        <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-800">
+          Forgot password?
+        </a>
+      </div>
+      <p *ngIf="errorMessage" class="mt-4 text-sm text-red-600">
+  {{ errorMessage }}
+</p>
+
+      <button
+        type="submit"
+        class="mt-8 w-full rounded-xl bg-indigo-600 px-4 py-3 font-semibold text-white transition hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-200"
+      >
+        Sign in
+      </button>
+
+      <p class="mt-6 text-center text-sm text-slate-500">
+        Don't have an account?
+        <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-800">Create one</a>
+      </p>
+    </form>
+  </section>
+</main>
